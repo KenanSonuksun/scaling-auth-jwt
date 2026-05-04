@@ -1,3 +1,8 @@
+![Java](https://img.shields.io/badge/Java-21-blue)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-green)
+![Docker](https://img.shields.io/badge/scaling-auth-blue)
+
+
 # Scaling Auth - JWT
 
 A production-oriented Spring Boot focused on JWT-based authentication under horizontal scaling.
