@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: scaling-auth-jwt
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:scaling_auth_jwt}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+app:
+  instance-id: ${APP_INSTANCE_ID:instance-1}
+  security:
+    jwt-secret: local-dev-secret-key-for-scaling-auth-jwt-lab-1234567890
+    access-token-expiration-minutes: 15
+
+logging:
+  level:
+    org.flywaydb: DEBUG
+    org.springframework.jdbc: DEBUG
